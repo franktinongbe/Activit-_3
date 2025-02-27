@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
     countriesList.forEach(country => {call+=`<div class="country"> <h3>${country.name.common}</h3>
       <img src="${country.flags.png}" alt="drapeau"> 
       <p><strong> Capital:  </strong>${country.capital ? country.capital[0]: ''}</p> 
-       <h3><strong>Devise:</strong>${country.currencies.name} </h3> </div>`;  
+       <h3><strong>Devise:</strong>${country.currencies ? Object.values(country.currencies).map(currency=>currency.name).join(','): 'N/A'} </h3> </div>`;  
     });
     countriesCont.innerHTML=call;
     
